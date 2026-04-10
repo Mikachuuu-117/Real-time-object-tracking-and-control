@@ -13,16 +13,16 @@ import numpy as np
 
 cap = cv2.VideoCapture(0)
 
-#Capture video
+# Capture video
 while True:
     ret, frame = cap.read()
     if not ret:
         break
 
-    #Convert colour from BGR to HSV
+    # Convert colour from BGR to HSV
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    #Create HSV bounds for specific colour
+    # Create HSV bounds for specific colour
     lower_red1 = np.array([0, 120, 70])
     upper_red1 = np.array([10, 255, 255])
 
@@ -41,9 +41,9 @@ while True:
 
     for contour in contours:
         area = cv2.contourArea(contour)
-        ##Debug: print(area)
+        ## Debug: print(area)
 
-        #Ignore small objects
+        # Ignore small objects
         if area > 1000:
 
             x, y, w, h = cv2.boundingRect(contour)
@@ -60,7 +60,7 @@ while True:
             left_zone = width // 3
             right_zone = 2 * width // 3
 
-            #Control logic
+            # Control logic
             if cx < left_zone:
                 direction = "LEFT"
             elif cx > right_zone:
