@@ -20,3 +20,6 @@ Software that uses real time computer vision to implement a real-time object tra
 - Put a red object in frame and it will be tracked
 - To change colour to be tracked adjust HSV values in code acordingly
 - To exit frame press 'q'
+
+## Demo
+![Demo](Assets/Object-tracking-demo.gif)
